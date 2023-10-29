@@ -8,7 +8,11 @@ const travelSchema = new mongoose.Schema(
 		},
 		category: {
 			type: String,
-			required: false,
+			required: true,
+		},
+		content: {
+			type: String,
+			required: true,
 		},
 		cover: {
 			type: String,

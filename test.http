@@ -51,7 +51,7 @@ Content-Type: application/json
 }
 
 ####
-DELETE http://localhost:5050/travels/delete/653bfa1a66acb609bf088924
+DELETE http://localhost:5050/travels/delete/653bfbef63c23350e5cec733
 
 ####
 GET http://localhost:5050/travels/653bfbef63c23350e5cec733/testimonials

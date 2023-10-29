@@ -17,6 +17,7 @@ const TestimonialSchema = new mongoose.Schema(
 		valutation: {
 			type: Number,
 			required: true,
+			min: 1,
 		},
 	},
 	{ timestamps: true, strict: true }

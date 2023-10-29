@@ -2,6 +2,42 @@ const express = require("express");
 const users = express.Router();
 const userModel = require("../models/user");
 const bcrypt = require("bcrypt");
+const cloudinary = require("cloudinary").v2;
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const crypto = require("crypto");
+const multer = require("multer");
+require("dotenv").config();
+
+cloudinary.config({
+	cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+	api_key: process.env.CLOUDINARY_API_KEY,
+	api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+const cloudStorage = new CloudinaryStorage({
+	cloudinary: cloudinary,
+	params: {
+		folder: "users_avatar",
+		format: async (req, res) => "jpeg",
+		public_id: (req, file) => file.name,
+	},
+});
+
+const internalStorage = multer.diskStorage({
+	destination: (req, file, cb) => {
+		cb(null, "./uploads");
+	},
+
+	filename: (req, file, cb) => {
+		const uniqueSuffix = `${Date.now()}-${crypto.randomUUID()}`;
+
+		const fileExtension = file.originalname.split(".").pop();
+		cb(null, `${file.fieldname}-${uniqueSuffix}.${fileExtension}`);
+	},
+});
+
+const upload = multer({ storage: internalStorage });
+const cloudUpload = multer({ storage: cloudStorage });
 
 users.get("/users", async (req, res) => {
 	try {
@@ -18,6 +54,35 @@ users.get("/users", async (req, res) => {
 		});
 	}
 });
+
+users.post("/users/upload", upload.single("avatar"), async (req, res) => {
+	const url = `${req.protocol}://${req.get("host")}`;
+
+	try {
+		const imgUrl = req.file.filename;
+		res.status(200).json({ cover: `${url}/uploads/${imgUrl}` });
+	} catch (error) {
+		res.status(500).json({
+			statusCode: 500,
+			message: "Errore interno del server",
+		});
+	}
+});
+
+users.post(
+	"/users/cloudUpload",
+	cloudUpload.single("avatar"),
+	async (req, res) => {
+		try {
+			res.status(200).json({ avatar: req.file.path });
+		} catch (error) {
+			res.status(500).json({
+				statusCode: 500,
+				message: "Errore interno del server",
+			});
+		}
+	}
+);
 
 users.post("/users/create", async (req, res) => {
 	try {
