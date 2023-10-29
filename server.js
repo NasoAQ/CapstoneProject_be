@@ -4,6 +4,7 @@ require("dotenv").config();
 const cors = require("cors");
 const usersRoute = require("./routes/users");
 const travelsRoute = require("./routes/travels");
+const testimonialsRoute = require("./routes/testimonials");
 
 const PORT = 5050;
 
@@ -15,6 +16,7 @@ app.use(express.json());
 //Routes
 app.use("/", usersRoute);
 app.use("/", travelsRoute);
+app.use("/", testimonialsRoute);
 
 mongoose.connect(process.env.MONGODB_URL, {
 	useNewUrlParser: true,
