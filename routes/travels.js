@@ -39,7 +39,7 @@ const upload = multer({ storage: internalStorage });
 const cloudUpload = multer({ storage: cloudStorage });
 
 travels.get("/travels", async (req, res) => {
-	const { page = 1, pageSize = 3 } = req.query;
+	const { page = 1, pageSize = 10 } = req.query;
 	try {
 		const travels = await travelModel
 			.find()
