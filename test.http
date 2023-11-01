@@ -28,6 +28,9 @@ DELETE  http://localhost:5050/users/delete/653b6a2b64f3807f4d7689d7
 GET http://localhost:5050/travels
 
 ####
+GET http://localhost:5050/travels/category/Relax
+
+####
 GET http://localhost:5050/travels/653bfbef63c23350e5cec733
 
 ####
