@@ -3,6 +3,9 @@
 	"version": "1.0.0",
 	"description": "\\_be",
 	"main": "index.js",
+	"engines": {
+		"node": ">= 14.20.*"
+	},
 	"scripts": {
 		"dev": "nodemon server.js"
 	},
