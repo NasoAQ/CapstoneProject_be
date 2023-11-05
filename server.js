@@ -5,6 +5,7 @@ const cors = require("cors");
 const usersRoute = require("./routes/users");
 const travelsRoute = require("./routes/travels");
 const testimonialsRoute = require("./routes/testimonials");
+const loginRoute = require("./routes/login");
 
 const PORT = 5050;
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/", usersRoute);
 app.use("/", travelsRoute);
 app.use("/", testimonialsRoute);
+app.use("/", loginRoute);
 
 mongoose.connect(process.env.MONGODB_URL, {
 	useNewUrlParser: true,

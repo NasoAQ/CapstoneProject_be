@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
     "name":"Gabriele",
-    "username":"NasoAQ!",
+    "username":"Admin!",
     "email": "nasone@gmail.com",
     "password": "Lamiapassword",
     "role": "admin"
