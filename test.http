@@ -13,12 +13,11 @@ Content-Type: application/json
 GET http://localhost:5050/users
 
 ####
-PATCH http://localhost:5050/users/update/653b6a2b64f3807f4d7689d7 HTTP/1.1
+PATCH http://localhost:5050/users/update/6547d6fa9224829eb7385c40 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Gabriele D'Onofrio",
-    "username": "NasoAQ"
+    "role":"admin"
 }
 
 ####
