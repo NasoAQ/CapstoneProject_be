@@ -11,6 +11,8 @@ Content-Type: application/json
 
 ####
 GET http://localhost:5050/users
+####
+GET http://localhost:5050/users/6547d6fa9224829eb7385c40
 
 ####
 PATCH http://localhost:5050/users/update/6547d6fa9224829eb7385c40 HTTP/1.1

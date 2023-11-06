@@ -55,6 +55,23 @@ users.get("/users", async (req, res) => {
 	}
 });
 
+users.get("/users/:id", async (req, res) => {
+	try {
+		const newUser = await userModel.findById(req.params.id);
+		res.status(200).send({
+			statusCode: 200,
+			message: "Utente recuperato",
+			newUser,
+		});
+	} catch (e) {
+		res.status(500).send({
+			statusCode: 500,
+			message: "Errore interno",
+			error: e,
+		});
+	}
+});
+
 users.post("/users/upload", upload.single("avatar"), async (req, res) => {
 	const url = `${req.protocol}://${req.get("host")}`;
 
