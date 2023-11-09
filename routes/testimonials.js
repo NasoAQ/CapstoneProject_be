@@ -3,6 +3,30 @@ const testimonialModel = require("../models/testimonial");
 const travelModel = require("../models/travel");
 const testimonials = express.Router();
 
+testimonials.get("/testimonials", async (req, res) => {
+	try {
+		const allTestimonials = await testimonialModel.find().populate("user");
+
+		if (!allTestimonials || allTestimonials.length === 0) {
+			return res.status(404).json({
+				statusCode: 404,
+				message: "Nessuna testimonianza trovata",
+			});
+		}
+
+		res.status(200).json({
+			statusCode: 200,
+			testimonials: allTestimonials,
+		});
+	} catch (error) {
+		res.status(500).send({
+			statusCode: 500,
+			message: "Errore interno",
+			error,
+		});
+	}
+});
+
 testimonials.get("/travels/:id/testimonials", async (req, res) => {
 	const { id } = req.params;
 	try {
