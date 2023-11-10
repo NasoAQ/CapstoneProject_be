@@ -112,6 +112,7 @@ testimonials.get("/travels/:id/testimonials/:testId", async (req, res) => {
 				message: "Testimonianza non trovata",
 			});
 		}
+
 		res.status(200).send({
 			statusCode: 200,
 			testimonial,
