@@ -12,14 +12,14 @@ Content-Type: application/json
 ####
 GET http://localhost:5050/users
 ####
-GET http://localhost:5050/users/6547d6fa9224829eb7385c40
+GET http://localhost:5050/users/654e7530e8e2fbce2143570c
 
 ####
-PATCH http://localhost:5050/users/update/6547d6fa9224829eb7385c40 HTTP/1.1
+PATCH http://localhost:5050/users/update/654e7530e8e2fbce2143570c HTTP/1.1
 Content-Type: application/json
 
 {
-    "role":"admin"
+    "password":"Luigimario"
 }
 
 ####
@@ -65,8 +65,11 @@ POST http://localhost:5050/travels/653f65f6728b2f91cdb17616 HTTP/1.1
 Content-Type: application/json
 
 {
-    "testimonial": "Incredibileeeeeee",
-    "valutation":"10"
+    "testimonial": "Bomberini",
+    "valutation":"5",
+    "user":{
+        "username":"SuperMario"
+    }
 }
 
 ####

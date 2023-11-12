@@ -1,11 +1,12 @@
 const express = require("express");
 const testimonialModel = require("../models/testimonial");
 const travelModel = require("../models/travel");
+const userModel = require("../models/user");
 const testimonials = express.Router();
 
 testimonials.get("/testimonials", async (req, res) => {
 	try {
-		const allTestimonials = await testimonialModel.find().populate("user");
+		const allTestimonials = await testimonialModel.find().populate();
 
 		if (!allTestimonials || allTestimonials.length === 0) {
 			return res.status(404).json({
@@ -69,8 +70,18 @@ testimonials.post("/travels/:id", async (req, res) => {
 				message: "Travel non trovato",
 			});
 		}
-		const { testimonial, valutation } = req.body;
+		const { testimonial, valutation, user } = req.body;
+		const existingUser = await userModel.findOne({ username: user.username });
+
+		if (!existingUser) {
+			return res.status(404).json({
+				statusCode: 404,
+				message: "Utente non trovato",
+			});
+		}
+
 		const newTestimonial = new testimonialModel({
+			user: existingUser._id,
 			testimonial,
 			valutation,
 			travel: id,
@@ -83,6 +94,7 @@ testimonials.post("/travels/:id", async (req, res) => {
 			payload: savedTestimonial,
 		});
 	} catch (error) {
+		console.error(error);
 		res.status(500).send({
 			statusCode: 500,
 			message: "Errore durante la creazione",
