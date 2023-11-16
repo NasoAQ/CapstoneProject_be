@@ -6,6 +6,7 @@ const usersRoute = require("./routes/users");
 const travelsRoute = require("./routes/travels");
 const testimonialsRoute = require("./routes/testimonials");
 const loginRoute = require("./routes/login");
+const githubRoute = require("./routes/github");
 
 const PORT = 5050;
 
@@ -19,6 +20,7 @@ app.use("/", usersRoute);
 app.use("/", travelsRoute);
 app.use("/", testimonialsRoute);
 app.use("/", loginRoute);
+app.use("/", githubRoute);
 
 mongoose.connect(process.env.MONGODB_URL, {
 	useNewUrlParser: true,
