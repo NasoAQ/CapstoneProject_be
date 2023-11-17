@@ -1,20 +1,20 @@
 # Prestige Adventures 👑
 
-Benvenuto nel mio progetto finale del corso web developer di Epicode! 💻
+Benvenuto nel mio progetto finale del corso di web developer di Epicode! 💻
 
 ## Descrizione del Progetto
 
-Questo progetto è stato sviluppato utilizzando lo stack MERN ed è progettato per un'agenzia di viaggi. 🚀
+Questo progetto è stato sviluppato utilizzando lo stack MERN con Bootstrap per lo stile grafico ed è pensato per un'agenzia di viaggi. 🚀
 
 ### Funzionalità Chiave 🔑
 
-- Sezione utente ospite 🏖️
+- **Sezione Utente Ospite 🏖️**
 
-  L'utente ha la possibilità di navigare in libertà nel sito, consultare i viaggi e visualizzare i relativi dettagli.
+  L'utente ha la possibilità di navigare liberamente nel sito, consultare i viaggi e visualizzarne i dettagli.
 
-  Può contattare l'agenzia tramite il form dei contatti, specificando periodo e richieste particolari.
+  Può contattare l'agenzia attraverso il modulo dei contatti, specificando periodo e eventuali richieste particolari.
 
-  Ha la possibilità di registrarsi, effettuare il login standard oppure effettuare il login tramite l'account di github.
+  Ha la possibilità di registrarsi, effettuare il login standard o utilizzare il login tramite l'account di GitHub.
 
   (Utente di prova:
 
@@ -23,21 +23,21 @@ Questo progetto è stato sviluppato utilizzando lo stack MERN ed è progettato p
   🔓 Password: Luigimario
   )
 
-  Una volta effettuato il login, l'utente ha la possibilità di postare una recensione sull'esperienza vissuta.
+  Una volta effettuato il login, l'utente può pubblicare una recensione sull'esperienza vissuta.
 
-- Sezione utente admin 🧑‍💻
+- **Sezione Utente Admin 🧑‍💻**
 
-  Per entrare nella sezione admin effettuare il login inserendo:
+  Per accedere alla sezione admin, effettuare il login inserendo:
 
   📧 Email: nasone@gmail.com
 
   🔓 Password: Ilmionasone
 
-  L'utente verrà reindirizzato nella pagina admin da cui potrà gestire viaggi e recensioni.
+  L'utente verrà reindirizzato alla pagina admin, da cui potrà gestire viaggi e recensioni.
 
-  Qui si può creare un nuovo viaggio tramite il form, si può modificare e cancellare in base alle proprie esigenze.
+  Qui è possibile creare un nuovo viaggio tramite il modulo, modificarlo e cancellarlo in base alle esigenze.
 
-  L'admin ha la possibilità di rimuovere recensioni indesiderate.
+  L'admin ha la facoltà di rimuovere recensioni indesiderate.
 
 ## Demo ✈️
 
@@ -65,7 +65,7 @@ Questo progetto è stato sviluppato utilizzando lo stack MERN ed è progettato p
 
   Ora dovresti essere in grado di visualizzare il tuo progetto localmente all'indirizzo http://localhost:3000.
 
-### Contribuisci 🤝
+## Contribuisci 🤝
 
 Sono aperto a contributi! Se desideri migliorare il mio progetto, apri una nuova issue o invia una pull request. Sarò molto felice di collaborare con te! 👋
 
